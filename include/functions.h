@@ -4,19 +4,7 @@
   #include <sstream>
   #include <vector>
   #include <string> 
-  class Instruction{
-  private:
-    std::string instruction;
-    std::string parameter;
-  public:
-    Instruction(std::string inst, std::string param){
-      instruction = inst;
-      parameter = param;
-    };
-    void show(){
-      std::cout<<parameter<<std::endl;
-    };
-  };
+  
   void readInput(const char* fileName, std::vector<std::string> &instructions){
     std::ifstream file;
     std::string line;
@@ -40,13 +28,26 @@
     }
   }
 
-  void createPBMImage(){
-
+  void writeOutFile(std::vector<std::vector<int>> table){
+    std::ofstream ofs ("p1.txt", std::ofstream::out);
+    
+      ofs << "P1"<<'\n'<<"# José Wilder de Morais Venancio"
+      <<'\n'<< "401" <<' '<<"401" << ' ' ;
+          for (unsigned int i = 0; i < table.size(); i++)
+          {	
+            for (unsigned int j = 0; j < table[i].size(); j++)
+            {
+              ofs << table[i][j] <<' ';
+            }
+          }
+      ofs.close();
   }
   
   void initializeMatrix(int x, int y){
        std::cout<<"Inicializado"<<std::endl;
   }
+
+
 
   #endif
 

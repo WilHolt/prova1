@@ -83,4 +83,5 @@ int main(int argc, char const *argv[])
 			std::cout << table[i][j];
 		}
 	}
+	writeOutFile(table);
 }
