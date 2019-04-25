@@ -29,7 +29,7 @@
   }
 
   void writeOutFile(std::vector<std::vector<int>> table){
-    std::ofstream ofs ("p1.txt", std::ofstream::out);
+    std::ofstream ofs ("p1.pbm", std::ofstream::out);
     
       ofs << "P1"<<'\n'<<"# José Wilder de Morais Venancio"
       <<'\n'<< "401" <<' '<<"401" << ' ' ;

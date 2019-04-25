@@ -29,14 +29,17 @@ int main(int argc, char const *argv[])
 			}
 			if( instructions[i] == "s"){
 				actual_command = "s";
+				
+
 			}
 			if(instructions[i] == "c"){//cima
 			int aux = std::stoi( instructions[++i],nullptr, 10);	
 			init_x = actual_x;						
-				for(int cont = actual_x; cont > (init_x-aux); cont--){
+				for(int cont = init_x; cont > (init_x-aux); cont--){
 					table[cont][actual_y] = 1;
+					actual_x--;
 				}
-	
+				i++;
 			}
 			if(instructions[i] == "b"){//baixo
 				int aux = std::stoi( instructions[++i],nullptr, 10);	
@@ -49,6 +52,7 @@ int main(int argc, char const *argv[])
 					else{
 						actual_x++;
 					}
+					
 				}
 			
 			}
@@ -71,6 +75,7 @@ int main(int argc, char const *argv[])
 				init_y = actual_y;								
 				for(int cont = init_y; cont > (init_y-aux); cont--){
 					table[actual_x][cont] = 1;
+					actual_y--;
 				}
 				i++;
 			}
