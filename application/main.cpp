@@ -21,8 +21,8 @@ int main(int argc, char const *argv[])
 			std::vector<std::vector<int>> table(x,std::vector<int>(y,0)); // INICIALIZAR MATRIZ
 			 
 	for(unsigned int i = 0 ; i < instructions.size() ; i++){
-		std::cout<<instructions[i];
 		if(i>2){
+			std::cout<< instructions[i] <<'\n';
 			if( instructions[i] == "a"){
 			table[actual_x][actual_y] = 1;
 			actual_command = "a";
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
 					table[cont][actual_y] = 1;
 					actual_x--;
 				}
-				i++;
+			
 			}
 			if(instructions[i] == "b"){//baixo
 				int aux = std::stoi( instructions[++i],nullptr, 10);	
@@ -52,9 +52,7 @@ int main(int argc, char const *argv[])
 					else{
 						actual_x++;
 					}
-					
 				}
-			
 			}
 			if(instructions[i] == "d"){//direita
 				int aux = std::stoi( instructions[++i],nullptr, 10);
@@ -67,7 +65,6 @@ int main(int argc, char const *argv[])
 						actual_y++;						
 					}
 				}
-				i++;
 
 			}
 			if(instructions[i] == "e"){//esquerda
@@ -77,7 +74,6 @@ int main(int argc, char const *argv[])
 					table[actual_x][cont] = 1;
 					actual_y--;
 				}
-				i++;
 			}
 		}
 	}
